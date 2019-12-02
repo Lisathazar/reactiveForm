@@ -33,3 +33,41 @@
 <p>Street: {{user.street}}</p>
 <p>CodePost: {{user.codePost}}</p>
 <p>Town: {{user.town}}</p>
+
+<form [formGroup]="userForm"(ngSubmit)="onSubmit()" class ="containe">
+    <div class = "contain">
+        <label>
+            Username:
+            <input type="text" formControlName="username">
+        </label>
+        <div formGroupName="credentials">
+            <div class = "contain">
+                <label>
+                    Email:
+                    <!--
+                         "street" correspond à la propriété street du FormGroup address
+                         contenu dans le FormGroup userForm
+                    -->
+                    <input type="email" formControlName="email">
+                </label>
+            </div>
+    
+            <div class = "contain">
+                <label>
+                    Password:
+                    <!--
+                         "city" correspond à la propriété city du FormGroup address
+                         contenu dans le FormGroup userForm
+                    -->
+                    <input type="text" formControlName="password">
+                </label>
+            </div>
+
+        </div>
+        <button type="submit" [disabled]="!userForm.valid">Submit</button>
+    </div>
+</form>
+
+<p>Nom de l'utilisateur: {{userForm.value.username}}</p>
+<p>Email de l'utilisateur: {{userForm.value.credentials.email}}</p>
+<p>Mot de passe de l'utilisateur: {{userForm.value.credentials.password}}</p>

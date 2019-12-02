@@ -9,6 +9,17 @@
     background-color: goldenrod;
     border-radius: 15px;
 }
+.containe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 300px;
+    height: 200px;
+    margin-top: 30px;
+    background-color: rosybrown;
+    border-radius: 15px;
+}
 input{
     display: block;
     left : 150px;

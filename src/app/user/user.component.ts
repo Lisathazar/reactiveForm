@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl} from '@angular/forms';
+import { FormControl, FormGroup} from '@angular/forms';
 import { User } from '../user';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-user',
@@ -18,8 +19,17 @@ export class UserComponent implements OnInit {
     codePost = new FormControl('');
     town =  new FormControl('');
 
+    userForm = new FormGroup({
+      username: new FormControl(''),
+      // Gestion de l'adresse avec un FormGroup imbriqué
+      credentials: new FormGroup({
+         email: new FormControl(''),
+          password: new FormControl(''),
+      })
+ });
 
-  constructor() { }
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
@@ -32,5 +42,9 @@ export class UserComponent implements OnInit {
     this.user.codePost= this.codePost.value;
     this.user.town= this.codePost.value;
   }
-  
+  onSubmit() {
+    console.log(this.userForm.value);
+}
+
+
 }
