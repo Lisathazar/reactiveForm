@@ -49,6 +49,11 @@
                          contenu dans le FormGroup userForm
                     -->
                     <input type="email" formControlName="email">
+                    {{ userForm.get('credentials.email').errors?.email.rules }}
+                <div *ngIf="userForm.get('credentials.email').errors && !userForm.get('credentials.email').pristine" class="error-msg">
+                    <div [hidden]="!userForm.get('credentials.email').errors.required">password is required.</div>
+                    <div [hidden]="!userForm.get('credentials.email').invalid">password is invalid.</div>
+                </div>
                 </label>
             </div>
     
@@ -59,7 +64,7 @@
                          "city" correspond à la propriété city du FormGroup address
                          contenu dans le FormGroup userForm
                     -->
-                    <input type="text" formControlName="password">
+                    <input type="password" formControlName="password">
                 </label>
             </div>
 

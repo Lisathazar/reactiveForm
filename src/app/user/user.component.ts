@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup} from '@angular/forms';
+import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { User } from '../user';
 import { FormBuilder } from '@angular/forms';
+import { emailValidator } from '../email-validator';
 
 @Component({
   selector: 'app-user',
@@ -23,7 +24,7 @@ export class UserComponent implements OnInit {
       username: new FormControl(''),
       // Gestion de l'adresse avec un FormGroup imbriqué
       credentials: new FormGroup({
-         email: new FormControl(''),
+         email: new FormControl('', [Validators.required, emailValidator]),
           password: new FormControl(''),
       })
  });
