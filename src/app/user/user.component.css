@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 300px;
+    height: 400px;
+    margin-top: 30px;
+    background-color: goldenrod;
+    border-radius: 15px;
+}
+input{
+    display: block;
+    left : 150px;
+}
+button{
+    width: 181px;
+    margin-top: 15px;
+}
+.contain{
+    margin: auto;
+}

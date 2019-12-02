@@ -1,0 +1,35 @@
+<div class = "container">
+    <label class = "contain">
+      Username:
+        <input type="text" [formControl]= "name" >
+    </label>
+    <label class = "contain">
+      Email:
+        <input type="email" [formControl]= "email" >
+    </label>
+    <label class = "contain">
+      Password:
+        <input type="text" [formControl]= "password" >
+    </label>
+    <div class = "contain">
+      <p>Adress:</p>
+      <label> Street:
+        <input type="text" [formControl]= "street" >
+      </label>
+      <label>CP:
+        <input type="number" [formControl]= "codePost" >
+      </label>
+      <label>Town:
+        <input type="text" [formControl]= "town" >
+    </label>
+   
+  </div>
+      <button  class = "contain" (click)="confirmForm()">Inscription</button>
+</div>
+
+<p>Name: {{user.name}}</p>
+<p>Email: {{user.email}}</p>
+<p>Password: {{user.password}}</p>
+<p>Street: {{user.street}}</p>
+<p>CodePost: {{user.codePost}}</p>
+<p>Town: {{user.town}}</p>
